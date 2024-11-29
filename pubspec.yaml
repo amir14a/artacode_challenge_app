@@ -1,5 +1,5 @@
 name: artacode_challenge_app
-description: "A new Flutter project."
+description: "This is a challenge app by AmirAbbas Jannatian for artacode"
 publish_to: 'none'
 version: 0.1.0
 
@@ -15,7 +15,16 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/png/
+  fonts:
+    - family: YekanBakh
+      fonts:
+        - asset: assets/font/Yekan-Bakh-FaNum-04-Regular.ttf
+          weight: 400
+        - asset: assets/font/Yekan-Bakh-FaNum-06-Bold.ttf
+          weight: 600

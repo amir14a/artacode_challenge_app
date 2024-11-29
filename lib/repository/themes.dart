@@ -2,7 +2,7 @@ import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:flutter/material.dart';
 
 final appLightTheme = ThemeData(
-  fontFamily: 'Ubuntu',
+  fontFamily: 'YekanBakh',
   brightness: Brightness.light,
   primaryColor: AppColors.primaryColor,
   colorScheme: const ColorScheme.light(primary: AppColors.primaryColor),
