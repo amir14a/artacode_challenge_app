@@ -41,18 +41,27 @@ class _AppButtonState extends State<AppButton> {
               borderRadius: BorderRadius.circular(50),
               onTap: widget.onTap,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      widget.text,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
+                  if (widget.isLoading)
+                    SizedBox.square(
+                      dimension: 24,
+                      child: CircularProgressIndicator(
                         color: Colors.white,
                       ),
-                    ),
-                  )
+                    )
+                  else
+                    Expanded(
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        widget.text,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
                 ],
               ),
             ),

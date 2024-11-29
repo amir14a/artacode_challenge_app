@@ -57,7 +57,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Row(),
                 ConstrainedBox(constraints: BoxConstraints(maxWidth: 390), child: Image.asset(AppAssets.mainIMG)),
-                ConstrainedBox(constraints: BoxConstraints(maxWidth: 180), child: Image.asset(AppAssets.logo)),
+                ConstrainedBox(constraints: BoxConstraints(maxWidth: 200), child: Image.asset(AppAssets.logo)),
                 Text(
                   'فروشگاه گیمینو',
                   style: TextStyle(fontWeight: FontWeight.w900, fontSize: 30),

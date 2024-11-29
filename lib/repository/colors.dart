@@ -11,4 +11,6 @@ abstract class AppColors {
   static const mainButtonBg = Color(0xFF0183FF);
   static const textSecondary = Color(0xFF676767);
   static const textSecondaryLight = Color(0xFF8A8A8A);
+  static const textHintColor = Color(0xFFC4C4C4);
+  static const errorText = Color(0xFFD81B60);
 }
