@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:artacode_challenge_app/main.dart';
 import 'package:artacode_challenge_app/repository/assets.dart';
 import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:artacode_challenge_app/view/screen/login_screen.dart';
@@ -78,13 +79,13 @@ class WelcomeScreen extends StatelessWidget {
                     minHeight: 56,
                     text: 'ایجاد حساب کاربری',
                     onTap: () {
-                      Navigator.of(context).push(CupertinoPageRoute(builder: (c) => RegisterScreen()));
+                      Navigator.of(context).pushNamed(AppRoutes.register);
                     },
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(CupertinoPageRoute(builder: (c) => LoginScreen()));
+                    Navigator.of(context).pushNamed(AppRoutes.login);
                   },
                   borderRadius: BorderRadius.circular(8),
                   child: Padding(

@@ -1,3 +1,4 @@
+import 'package:artacode_challenge_app/repository/api.dart';
 import 'package:artacode_challenge_app/repository/enums.dart';
 import 'package:flutter/material.dart';
 
@@ -17,5 +18,21 @@ class RegisterViewModel extends ChangeNotifier {
     requestState.dispose();
     errorText.dispose();
     super.dispose();
+  }
+
+  doRegister() async {
+    requestState.value = AppApiRequestState.SENDING;
+    errorText.value = null;
+    try {
+      var response = await AppApi.register(emailCtrl.text, passCtrl.text);
+      requestState.value = AppApiRequestState.SUCCESS;
+      //TODO: Save token and navigate to home
+    } on ApiErrorException catch (e) {
+      errorText.value = e.errorMessage;
+      requestState.value = AppApiRequestState.FAILED;
+    } catch (e) {
+      errorText.value = 'متأسفانه ارتباط با سرور ناموفق بود.';
+      requestState.value = AppApiRequestState.FAILED;
+    }
   }
 }

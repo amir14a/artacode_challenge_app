@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:artacode_challenge_app/repository/assets.dart';
 import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:artacode_challenge_app/repository/enums.dart';
+import 'package:artacode_challenge_app/view/screen/register_screen.dart';
 import 'package:artacode_challenge_app/view/widget/app_button.dart';
 import 'package:artacode_challenge_app/view/widget/app_input.dart';
 import 'package:artacode_challenge_app/viewmodel/login_view_model.dart';
@@ -130,13 +131,13 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(CupertinoPageRoute(builder: (c) => LoginScreen()));
+                      Navigator.of(context).push(CupertinoPageRoute(builder: (c) => RegisterScreen()));
                     },
                     borderRadius: BorderRadius.circular(8),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'قبلا ثبت نام کرده ام',
+                        'ایجاد حساب کاربری',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
