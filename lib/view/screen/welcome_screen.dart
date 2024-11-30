@@ -1,16 +1,25 @@
 import 'dart:ui';
 
 import 'package:artacode_challenge_app/main.dart';
+import 'package:artacode_challenge_app/repository/app_shared_preferences.dart';
 import 'package:artacode_challenge_app/repository/assets.dart';
 import 'package:artacode_challenge_app/repository/colors.dart';
-import 'package:artacode_challenge_app/view/screen/login_screen.dart';
-import 'package:artacode_challenge_app/view/screen/register_screen.dart';
 import 'package:artacode_challenge_app/view/widget/app_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    AppSharedPreferences.saveFirstLaunch();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

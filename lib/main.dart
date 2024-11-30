@@ -1,4 +1,6 @@
+import 'package:artacode_challenge_app/repository/app_shared_preferences.dart';
 import 'package:artacode_challenge_app/repository/consts.dart';
+import 'package:artacode_challenge_app/repository/themes.dart';
 import 'package:artacode_challenge_app/view/screen/home_screen.dart';
 import 'package:artacode_challenge_app/view/screen/login_screen.dart';
 import 'package:artacode_challenge_app/view/screen/register_screen.dart';
@@ -8,24 +10,29 @@ import 'package:artacode_challenge_app/viewmodel/register_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:artacode_challenge_app/repository/themes.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var initialPage = AppRoutes.welcome;
+  if (!await AppSharedPreferences.getIsFirstLaunch()) initialPage = AppRoutes.login;
+  if (await AppSharedPreferences.getIsLoggedIn()) initialPage = AppRoutes.home;
   runApp(
-    const MainApp(),
+    MainApp(initialPage: initialPage),
   );
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final String initialPage;
+
+  const MainApp({super.key, required this.initialPage});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: Consts.navigatorKey,
       theme: appLightTheme,
-      initialRoute: AppRoutes.welcome,
+      initialRoute: initialPage,
       onGenerateRoute: (routeSetting) {
         if (routeSetting.name == AppRoutes.login) {
           return CupertinoPageRoute(

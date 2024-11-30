@@ -1,5 +1,6 @@
 import 'package:artacode_challenge_app/main.dart';
 import 'package:artacode_challenge_app/repository/api.dart';
+import 'package:artacode_challenge_app/repository/app_shared_preferences.dart';
 import 'package:artacode_challenge_app/repository/consts.dart';
 import 'package:artacode_challenge_app/repository/enums.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class LoginViewModel extends ChangeNotifier {
     try {
       var response = await AppApi.login(emailCtrl.text, passCtrl.text);
       requestState.value = AppApiRequestState.SUCCESS;
-      //TODO: Save token and navigate to home
+      await AppSharedPreferences.saveLoggedIn();
       Consts.navigatorKey.currentState?.pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
     } on ApiErrorException catch (e) {
       errorText.value = e.errorMessage;
