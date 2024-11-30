@@ -18,4 +18,7 @@ abstract class AppColors {
   static const logoutButtonTextColor = Color(0x99141414);
   static const mainShadowColor = Color(0x0D000000);
   static const productPriceColor = Color(0xFF989898);
+  static const productBgShade1 = Color(0xFFD1DEE1);
+  static const productBgShade2 = Color(0xFFC2D4D9);
+  static const colorCircleBorder = Color(0xFFCDCDCD);
 }

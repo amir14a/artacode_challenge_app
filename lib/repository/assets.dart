@@ -1,6 +1,8 @@
 abstract class AppAssets {
   static const upArrow = 'assets/png/bxs_up-arrow-alt.png';
   static const controller = 'assets/png/Controller.png';
+  static const controllerYellow = 'assets/png/Controller-Yellow.png';
+  static const controllerBlue = 'assets/png/Controller-Blue.png';
   static const loginIMG = 'assets/png/LoginIMG.png';
   static const logo = 'assets/png/Logo.png';
   static const mainIMG = 'assets/png/MainIMG.png';

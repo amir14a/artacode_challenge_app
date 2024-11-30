@@ -6,6 +6,7 @@ import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:artacode_challenge_app/repository/mock_data.dart';
 import 'package:artacode_challenge_app/view/screen/login_screen.dart';
 import 'package:artacode_challenge_app/view/screen/register_screen.dart';
+import 'package:artacode_challenge_app/view/screen/view_product_screen.dart';
 import 'package:artacode_challenge_app/view/widget/app_button.dart';
 import 'package:artacode_challenge_app/view/widget/product_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -78,8 +79,7 @@ class HomeScreen extends StatelessWidget {
                       (e) => ProductItem(
                         e,
                         onTap: () {
-                          // TODO:Navigate to view item page
-                          // Navigator.of(context).push(CupertinoPageRoute(builder: (_)=>));
+                          Navigator.of(context).push(CupertinoPageRoute(builder: (_) => ViewProductScreen(e)));
                         },
                       ),
                     ),
