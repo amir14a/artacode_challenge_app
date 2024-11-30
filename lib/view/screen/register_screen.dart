@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:artacode_challenge_app/main.dart';
 import 'package:artacode_challenge_app/repository/assets.dart';
 import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:artacode_challenge_app/repository/enums.dart';
@@ -118,20 +119,20 @@ class RegisterScreen extends StatelessWidget {
                     child: viewModel.errorText.value == null
                         ? SizedBox()
                         : Padding(
-                      padding: const EdgeInsets.only(top: 12),
-                      child: Text(
-                        viewModel.errorText.value!,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.errorText,
-                        ),
-                      ),
-                    ),
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Text(
+                              viewModel.errorText.value!,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: AppColors.errorText,
+                              ),
+                            ),
+                          ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(CupertinoPageRoute(builder: (c) => LoginScreen()));
+                      Navigator.of(context).pushNamed(AppRoutes.login);
                     },
                     borderRadius: BorderRadius.circular(8),
                     child: Padding(

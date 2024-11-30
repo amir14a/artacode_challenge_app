@@ -13,4 +13,9 @@ abstract class AppColors {
   static const textSecondaryLight = Color(0xFF8A8A8A);
   static const textHintColor = Color(0xFFC4C4C4);
   static const errorText = Color(0xFFD81B60);
+  static const homeBg = Color(0xFFE1E8EA);
+  static const logoutButtonBg = Color(0xFFB9D1D7);
+  static const logoutButtonTextColor = Color(0x99141414);
+  static const mainShadowColor = Color(0x0D000000);
+  static const productPriceColor = Color(0xFF989898);
 }

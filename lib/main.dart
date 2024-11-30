@@ -1,4 +1,5 @@
 import 'package:artacode_challenge_app/repository/consts.dart';
+import 'package:artacode_challenge_app/view/screen/home_screen.dart';
 import 'package:artacode_challenge_app/view/screen/login_screen.dart';
 import 'package:artacode_challenge_app/view/screen/register_screen.dart';
 import 'package:artacode_challenge_app/view/screen/welcome_screen.dart';
@@ -40,6 +41,10 @@ class MainApp extends StatelessWidget {
               child: RegisterScreen(),
             ),
           );
+        } else if (routeSetting.name == AppRoutes.home) {
+          return CupertinoPageRoute(
+            builder: (_) => HomeScreen(),
+          );
         } else {
           return CupertinoPageRoute(
             builder: (_) => WelcomeScreen(),
@@ -59,4 +64,5 @@ abstract class AppRoutes {
   static const welcome = 'welcome';
   static const login = 'login';
   static const register = 'register';
+  static const home = 'home';
 }

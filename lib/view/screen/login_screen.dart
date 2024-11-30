@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:artacode_challenge_app/main.dart';
 import 'package:artacode_challenge_app/repository/assets.dart';
 import 'package:artacode_challenge_app/repository/colors.dart';
 import 'package:artacode_challenge_app/repository/enums.dart';
@@ -131,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(CupertinoPageRoute(builder: (c) => RegisterScreen()));
+                      Navigator.of(context).pushNamed(AppRoutes.register);
                     },
                     borderRadius: BorderRadius.circular(8),
                     child: Padding(

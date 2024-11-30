@@ -1,33 +1,19 @@
+import 'dart:ui';
+
 class ProductModel {
   ProductModel({
-    this.id,
-    this.title,
-    this.price,
-    this.description,
-    this.images,
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.images,
+    required this.colorsWithImageIndex,
   });
 
-  ProductModel.fromJson(dynamic json) {
-    id = json['id'];
-    title = json['title'];
-    price = json['price'];
-    description = json['description'];
-    images = json['images'] != null ? json['images'].cast<String>() : [];
-  }
-
-  int? id;
-  String? title;
-  int? price;
-  String? description;
-  List<String>? images;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['id'] = id;
-    map['title'] = title;
-    map['price'] = price;
-    map['description'] = description;
-    map['images'] = images;
-    return map;
-  }
+  int id;
+  String title;
+  int price;
+  String description;
+  List<String> images;
+  List<(Color, int?)> colorsWithImageIndex;
 }
